@@ -7,6 +7,7 @@ const second = document.querySelector(".second");
 const again = document.querySelector(".again");
 const totalTime = document.querySelector("#totalTime");
 const ideSex= document.getElementById('opcionSex');
+const cardsForWomen=document.querySelectorAll('memory-card-2');
 
 // escogiendo el sexo
 ideSex.addEventListener('change', (e)=>{
