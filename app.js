@@ -7,13 +7,13 @@ const second = document.querySelector(".second");
 const again = document.querySelector(".again");
 const totalTime = document.querySelector("#totalTime");
 const ideSex= document.getElementById('opcionSex');
-const cardsForWomen=document.querySelectorAll('memory-card-2');
+const cardsForWomen=document.querySelectorAll('.memory-card-2');
 
 // escogiendo el sexo
-ideSex.addEventListener('change', (e)=>{
-  const result= document.querySelectorAll('option')
-  console.log(e.target.value)
-})
+// ideSex.addEventListener('change', (e)=>{
+//   const result= document.querySelectorAll('option')
+//   console.log(e.target.value)
+// })
 
 let hasFlippedCard = false;
 let firstCard, secondCard;
@@ -127,6 +127,21 @@ again.addEventListener("click", function () {
     let randomPos = Math.floor(Math.random() * 12);
     card.style.order = randomPos;
   });
+  cardsForWomen.forEach((card)=>{
+    let randomPos=Math.floor(Math.random()*12);
+    card.style.order=randomPos
+  })
 })();
 
 cards.forEach((card) => card.addEventListener("click", flipCard));
+cardsForWomen.forEach((card)=>card.addEventListener('click',flipCard));
+
+ideSex.addEventListener('change',(e)=>{
+  e.preventDefault();
+  if(e.target.value==='man'){
+    return
+  }else if(e.target.value==='woman'){
+    document.querySelector('.memory-game-for-women').classList.toggle('show')
+  }
+})
+

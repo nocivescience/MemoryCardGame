@@ -33,9 +33,17 @@ h1 {
   height: 20px;
 }
 
+.memory-game-for-women{
+  opacity: 0;
+  z-index: -2;
+  position: absolute;
+  top: 0;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  right: 0;
+}
 /*card container */
-.memory-game,
-.memory-game-for-women {
+.memory-game {
   width: 550px;
   margin: auto;
   height: 500px;
@@ -201,4 +209,13 @@ img {
     width: calc(33.333% - 10px);
     height: calc(25% - 10px);
   }
+}
+
+#botonPrueba{
+  position: absolute;
+  right: 0;
+}
+.memory-game-for-women.show{
+  z-index: 20;
+  opacity: 1;
 }
